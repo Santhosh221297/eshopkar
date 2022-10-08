@@ -7,7 +7,9 @@
   "scripts":{
     "client": "cd client && npm start",
     "server": "ndemon server.js",
-    "app-start": "concurrency \"npm run server\" \"npm run client"
+    "app-start": "concurrency \"npm run server\" \"npm run client",
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -32,5 +34,9 @@
     "validator": "^13.7.0",
     "xss-clean": "^0.1.1",
     "yamljs": "^0.3.0"
+  },
+  "engine": {
+    "node":"^16.17.0",
+    "npm": "^8.15.0"
   }
 }
